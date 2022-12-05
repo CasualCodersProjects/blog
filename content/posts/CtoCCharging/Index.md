@@ -1,6 +1,6 @@
 ---
 title: "Supporting USB C to C Charging and Data Transfer"
-date: "2022-12-05T16:00:16-05:00"
+date: 2022-12-05T16:00:16-05:00
 draft: false
 author: "Ian"
 ---
@@ -16,6 +16,7 @@ This could be a point of confusion for new or inexperienced designers using USB 
 
 This is where the CC lines come in. The UCB C controller uses the CC lines to establish the protocol with which to communicate with the connected device. For our purposes, this will be a power delivery request for 5v, 9v, 12v, or 20v [with 48v soon to come]. This requires an extra integrated circuit, or microcontroller to establish this communication though. For legacy devices where a simple 5v is needed however, you can simply stick two 5.1k Ohm pull-down resistors on the CC lines. Each line needs it's own resistor, as the specification uses these lines to determine the 'direction' the plug was inserted. This tells the controller that it's communicating to a legacy device and that it needs to provide 5v up to 1.5A or 3A depending on the source's capabilities.  
   
+
 ![A Proper USB C Implementation](./image.png)
 
 ## The Bottom Line
